@@ -6,6 +6,7 @@ import android.app.Application;
 import androidx.room.Room;
 import com.abhishek.notes.persistence.NoteDao;
 import com.abhishek.notes.persistence.NoteDatabase;
+import com.abhishek.notes.repository.NoteRepository;
 import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;
@@ -32,6 +33,12 @@ class AppModule {
     @Provides
     static NoteDao provideNoteDao(NoteDatabase noteDatabase) {
         return noteDatabase.getNoteDao();
+    }
+
+    @Singleton
+    @Provides
+    static NoteRepository provideNoteRepository(NoteDao noteDao) {
+        return new NoteRepository(noteDao);
     }
 
 }
