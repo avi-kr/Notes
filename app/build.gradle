@@ -15,6 +15,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
     }
 
     buildTypes {
@@ -48,14 +54,12 @@ dependencies {
     def androidx_arch_test_version = "2.1.0"
     androidTestImplementation "androidx.arch.core:core-testing:$androidx_arch_test_version"
 
-
     // -------- LOCAL UNIT TESTS (use JUnit5)
     // JUnit Jupiter
     def junit_jupiter_version = "5.3.2"
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junit_jupiter_version"
     testImplementation "org.junit.jupiter:junit-jupiter-params:$junit_jupiter_version"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junit_jupiter_version"
-
 
     // -------- MOCKITO
     def mockito_version = "3.3.3"
@@ -83,11 +87,9 @@ dependencies {
     // optional - RxJava support for Room
     implementation "androidx.room:room-rxjava2:$room_version"
 
-
     // ViewModel and LiveData
     def lifecycle_version = '2.2.0'
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
-
 
     // Reactive Streams (convert Observable to LiveData)
     def reactivestreams_version = "1.1.1"
