@@ -1,7 +1,8 @@
-package com.abhishek.notes;
+package com.abhishek.notes.ui.noteslist;
 
 import android.os.Bundle;
 import android.util.Log;
+import com.abhishek.notes.R;
 import com.abhishek.notes.repository.NoteRepository;
 import dagger.android.support.DaggerAppCompatActivity;
 import javax.inject.Inject;

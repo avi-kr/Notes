@@ -1,6 +1,6 @@
 package com.abhishek.notes.di;
 
-import com.abhishek.notes.NotesListActivity;
+import com.abhishek.notes.ui.noteslist.NotesListActivity;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
