@@ -1,5 +1,6 @@
 package com.abhishek.notes.di;
 
+import com.abhishek.notes.ui.note.NoteActivity;
 import com.abhishek.notes.ui.noteslist.NotesListActivity;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -14,4 +15,7 @@ public abstract class ActivityBuildersModule {
 
     @ContributesAndroidInjector
     abstract NotesListActivity contributeNotesListActivity();
+
+    @ContributesAndroidInjector
+    abstract NoteActivity contributeNotesActivity();
 }
